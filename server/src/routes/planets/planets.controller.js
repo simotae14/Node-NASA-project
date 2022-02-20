@@ -5,5 +5,5 @@ function getAllPlanets(req, res) {
 }
 
 module.exports = {
-  getPlanets
+  getAllPlanets
 };
