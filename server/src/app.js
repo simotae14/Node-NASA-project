@@ -8,7 +8,7 @@ const planetsRouter = require('./routes/planets/planets.router');
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:3000',
 }));
 app.use(express.json()); // middleware to handle json directly
 // add planetsRouter as a middleware
