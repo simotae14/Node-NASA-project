@@ -1,0 +1,26 @@
+{
+  "name": "node-react-nasa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm --prefix server run watch",
+    "client": "npm --prefix client start",
+    "watch": "npm run server & npm run client",
+    "test": "npm run test --prefix server && npm run test --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simotae14/Node-NASA-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simotae14/Node-NASA-project/issues"
+  },
+  "homepage": "https://github.com/simotae14/Node-NASA-project#readme"
+}
