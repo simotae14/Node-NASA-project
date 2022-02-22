@@ -7,6 +7,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const planetsRouter = require('./routes/planets/planets.router');
+const launchesRouter = require('./routes/launches/launches.router');
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use(express.static(path.join(__dirname, '..','public')));
 
 // add planetsRouter as a middleware
 app.use(planetsRouter);
+// add launchesRouter as a middleware
+app.use(launchesRouter);
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
