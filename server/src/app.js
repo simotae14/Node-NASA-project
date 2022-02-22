@@ -21,9 +21,9 @@ app.use(express.json()); // middleware to handle json directly
 app.use(express.static(path.join(__dirname, '..','public')));
 
 // add planetsRouter as a middleware
-app.use(planetsRouter);
+app.use('/planets', planetsRouter);
 // add launchesRouter as a middleware
-app.use(launchesRouter);
+app.use('/launches', launchesRouter);
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
