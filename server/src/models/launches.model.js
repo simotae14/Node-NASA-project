@@ -1,11 +1,11 @@
 const launches = require('./launches.mongo');
 const planets = require('./planets.mongo');
 
-let latestFlighNumber = 100;
+const DEFAULT_FLIGHT_NUMBER = 100;
 
 // example launch
 const launch = {
-  flightNumber: latestFlighNumber,
+  flightNumber: 100,
   mission: 'Kepler Exploration X',
   rocket: 'Explorer IS1',
   launchDate: new Date('December 27, 2030'),
@@ -19,6 +19,17 @@ saveLaunch(launch);
 
 function existsLaunchWithId(launchId) {
   return launches.has(launchId);
+}
+
+async function getLatestFlightNumber() {
+  const latestLaunch = await launches
+    .findOne()
+    .sort('-flightNumber');
+
+  if (!latestLaunch) {
+    return DEFAULT_FLIGHT_NUMBER;
+  }
+  return latestLaunch.flightNumber;
 }
 
 async function getAllLaunches() {
